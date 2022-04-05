@@ -54,37 +54,10 @@ namespace WebApplication1
 
                     var RetornoSERPRO2 = JsonConvert.DeserializeObject(RetornoSERPRO1);
 
-                    //dgvDados.DataSource = JsonConvert.DeserializeObject<socio[]>(RetornoSERPRO1).ToList();
-
-
-                    string sLine = RetornoSERPRO1; 
+                     string sLine = RetornoSERPRO1; 
                     TextBox1.Text = RetornoSERPRO2.ToString();
                     dynamic jsonTratado = JsonValue.Parse(sLine);
-
-                    //dgvDados.DataSource = JsonConvert.DeserializeObject<socio[]>(jsonTratado.socios).ToList();
-                  //dgvDados.DataSource = JsonConvert.DeserializeObject<RootObject>(jsonTratado).ToList();
                    
-
-                    string Nome = jsonTratado.nomeEmpresarial;
-                    
-                    //informação situação cadastral
-                    string motivo = jsonTratado.situacaoCadastral.motivo;
-                    string codigo = jsonTratado.situacaoCadastral.codigo;
-                    string data = jsonTratado.situacaoCadastral.data;
-                    
-                    //informações quadro societário
-                    string tipoSocio = jsonTratado.socios[0].tipoSocio;
-                    string cpf = jsonTratado.socios[0].cpf;
-                    string nome = jsonTratado.socios[0].nome;
-                    string qualificacao = jsonTratado.socios[0].qualificacao;
-                    string dataInclusao = jsonTratado.socios[0].dataInclusao;
-
-                    //informação representante legal
-                    string cpfRep = jsonTratado.socios[0].representanteLegal.cpf;
-                    string nomeRep = jsonTratado.socios[0].representanteLegal.nome;
-                    string qualificacaoRep = jsonTratado.socios[0].representanteLegal.qualificacao;
-
-
                     Registro registro = new Registro();
                     registro.codigo = codigo;
                     registro.nome = nome;
